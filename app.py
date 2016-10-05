@@ -1,5 +1,5 @@
 from flask import Flask,request,make_response
-import re
+import re,sys
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,4 +11,4 @@ def index():
 	resp.headers['Content-Type'] = 'application/json'
 	return resp
 if __name__ == "__main__":
-	app.run(host="0.0.0.0")
+	app.run(host="0.0.0.0", port=sys.argv[1])
